@@ -1,0 +1,15 @@
+.Form-register {
+    display: flex;
+    flex-direction: column;
+}
+
+.Form-register__label {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    margin-bottom: 15px;
+}
+
+.Form-register__btn {
+    width: 120px;
+}

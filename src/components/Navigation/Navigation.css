@@ -1,0 +1,17 @@
+.Main-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.Nav-item {
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.Nav-item :hover {
+    color: orangered;
+}
