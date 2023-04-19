@@ -1,0 +1,1 @@
+export { deafolt } from './AuthNav';

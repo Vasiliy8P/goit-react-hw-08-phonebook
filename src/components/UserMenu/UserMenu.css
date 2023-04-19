@@ -1,0 +1,23 @@
+.UserMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.User {
+    display: flex;
+    flex-direction: column;
+}
+
+.User__name {
+    margin-bottom: 8px;
+}
+
+.User__email {
+    margin: 0;
+}
+
+.UserMenu__btn-logout {
+    display: block;
+}

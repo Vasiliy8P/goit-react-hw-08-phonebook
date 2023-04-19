@@ -1,20 +1,20 @@
-.Main-nav {
+.Main-authNav {
     display: flex;
     list-style: none;
     padding: 0;
 }
 
-.Nav-item {
+.AuthNav-item {
     padding: 8px 16px;
     border-radius: 4px;
     color: black;
     font-weight: 500;
 }
 
-.Nav-item :hover {
+.AuthNav-item :hover {
     color: orangered;
 }
 
-.Nav-item__link {
+.AuthNav-item__link {
     text-decoration: none;
 }
