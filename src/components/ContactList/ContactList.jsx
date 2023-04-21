@@ -7,23 +7,16 @@ const ContactList = () => {
     const filterContacts = useSelector(selectFilterContacts);
     const dispatch = useDispatch ();
 
-    // const getFilterContacts = () => {
-    //     const normalizedFilterValue = filterValue.toLowerCase();
-    //     return contacts.filter(contact =>
-    //         contact.name.toLowerCase().includes(normalizedFilterValue)
-    //     )
-    // };
-
     const handleDeleteContact = (contactId) => {
         dispatch(deleteContact(contactId))
     }
 
     return (
         <ul className="Contacts__list">
-            {filterContacts.map(({ id, name, phone }) => {
+            {filterContacts.map(({ id, name, number }) => {
                     return (
                         <li key={id} className="Contacts__item">
-                            {name}: {phone}
+                            {name}: {number}
                             <button
                                 type="button"
                                 className="Contacts__btn"
