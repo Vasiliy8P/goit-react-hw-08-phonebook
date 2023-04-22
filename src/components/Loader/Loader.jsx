@@ -8,6 +8,7 @@ const Loader = () => {
             animationDuration="0.75"
             width="80"
             visible={true}
+            wrapperStyle={{marginLeft: "auto", marginRight: "auto"}}
         />
     )
 };

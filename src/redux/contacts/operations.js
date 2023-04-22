@@ -4,34 +4,34 @@ import axios from "axios";
 axios.defaults.baseURL = "https://connections-api.herokuapp.com";
 
 export const fetchContacts = createAsyncThunk("contacts/fetchAll",
-    async () => {
+    async (_, thunkAPI) => {
         try {
             const response = await axios.get("/contacts");
             return response.data;
         } catch (error) {
-            return error.message;
+            return thunkAPI.rejectWithValue(error.message);
         }
     }
 );
 
 export const addContact = createAsyncThunk("contacts/addContact",
-    async (contact) => {
+    async (contact, thunkAPI) => {
         try {
             const response = await axios.post("/contacts", contact);
             return response.data;
         } catch (error) {
-            return error.message;
+            return thunkAPI.rejectWithValue(error.message);
         }
     }
 );
 
 export const deleteContact = createAsyncThunk("contacts/deleteContact",
-    async (contactId) => {
+    async (contactId, thunkAPI) => {
         try {
             const response = await axios.delete(`/contacts/${contactId}`)
             return response.data;
         } catch (error) {
-            return error.message;
+            return thunkAPI.rejectWithValue(error.message);
         }
     }
 );
