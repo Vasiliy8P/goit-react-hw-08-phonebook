@@ -1,29 +1,19 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from 'redux/contacts/operations';
+import { useSelector } from 'react-redux';
 import { selectFilterContacts } from 'redux/contacts/selectors';
+import ContactCard from 'components/ContactCard/ContactCard';
 import './ContactList.css';
 
 const ContactList = () => {
     const filterContacts = useSelector(selectFilterContacts);
-    const dispatch = useDispatch ();
-
-    const handleDeleteContact = (contactId) => {
-        dispatch(deleteContact(contactId))
-    }
 
     return (
         <ul className="Contacts__list">
-            {filterContacts.map(({ id, name, number }) => {
+            {filterContacts.length === 0
+                ? <p>You havn't had the contacts yet. Please, add a contact</p>
+                : filterContacts.map(contact => {
                     return (
-                        <li key={id} className="Contacts__item">
-                            {name}: {number}
-                            <button
-                                type="button"
-                                className="Contacts__btn"
-                                onClick={() => (handleDeleteContact(id))}
-                            >
-                                Delete
-                            </button>
+                        <li key={contact.id} className="Contacts__item">
+                            <ContactCard contact={contact} />
                         </li>
                     )
                 }) 

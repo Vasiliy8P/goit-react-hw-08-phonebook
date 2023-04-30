@@ -1,15 +1,12 @@
-.Form-login {
+.Login-container {
+    padding: 16px 16px 125px 16px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
-.Form-login__label {
-    display: flex;
-    flex-direction: column;
-    width: 260px;
-    margin-bottom: 15px;
-}
-
-.Form-login__btn {
-    width: 120px;
+.Login-title {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
 }

@@ -1,16 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazy, useEffect } from 'react';
-import SharedLayout from 'components/SharedLayout';
-import Register from 'pages/Register';
-import Login from 'pages/Login';
-import Home from './Home/Home';
 import { useDispatch, useSelector } from 'react-redux';
 import { refreshCurrentUser } from 'redux/auth/authOperations';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 import { selectIsLoading } from 'redux/auth/authSelectors';
 import Loader from './Loader/Loader';
-
+import SharedLayout from 'components/SharedLayout';
+const Register = lazy(() => import("pages/Register"));
+const Login = lazy(() => import("pages/Login"));
+const Home = lazy(() => import("pages/Home"));
 const Contacts = lazy(() => import("pages/Contacts"));
 
 export const App = () => {
@@ -23,7 +22,7 @@ export const App = () => {
 
   return (
     isLoading
-      ? <Loader />      
+      ? <Loader />
       : (<div>
         <Routes>
           <Route path='/' element={<SharedLayout />}>

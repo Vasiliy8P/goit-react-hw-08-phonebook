@@ -1,20 +1,24 @@
 .Main-authNav {
+    margin-left: auto;
+}
+
+.Main-authNav__list {
     display: flex;
     list-style: none;
     padding: 0;
 }
 
-.AuthNav-item {
+.Main-authNav__list-item {
     padding: 8px 16px;
     border-radius: 4px;
-    color: black;
     font-weight: 500;
 }
 
-.AuthNav-item :hover {
+.Main-authNav__list-item :hover {
     color: orangered;
 }
 
-.AuthNav-item__link {
+.Main-authNav__list-item-link {
+    color: #fff;
     text-decoration: none;
 }

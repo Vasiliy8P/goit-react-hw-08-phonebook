@@ -1,5 +1,9 @@
-.Contacts__item {
-    margin-bottom: 10px;
+.Contacts__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+    list-style: none;
 }
 
 .Contacts__btn {

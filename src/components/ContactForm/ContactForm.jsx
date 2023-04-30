@@ -2,9 +2,12 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectContacts } from "redux/contacts/selectors";
 import { addContact } from "redux/contacts/operations";
-import './ContactForm.css';
+import { Button } from "@mui/material";
+import { HiPlus } from "react-icons/hi";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
-const ContactForm = () => {
+const ContactForm = ({ handleCloseModal }) => {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('')
     const contacts = useSelector(selectContacts);
@@ -20,6 +23,7 @@ const ContactForm = () => {
         };
 
         reset();
+        handleCloseModal();
     }
 
     const handleChange = (evt) => {
@@ -45,36 +49,52 @@ const ContactForm = () => {
     }
 
     return (
-        <form className="ContactForm" onSubmit={handleSubmitForm}>
-            <label>
-                Name
-                <br />
-                <input
-                    type="text"
-                    name="name"
-                    pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                    title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-                    required
-                    value={name}
-                    onChange={handleChange}
-                />
-            </label>
-            <label>
-                Number
-                <br />
-                <input
-                    type="tel"
-                    name="number"
-                    pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-                    title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-                    required
-                    value={number}
-                    onChange={handleChange}
-                />
-            </label>
-            <button type="submit" className="ContactForm__btn">Add contact</button>
-        </form>
+        <Box
+            component="form"
+            autoComplete="off"
+            onSubmit={handleSubmitForm}
+        >
+            <TextField
+                id="outlined-basic"
+                label="Name"
+                variant="outlined"
+                type="text"
+                name="name"
+                pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                required
+                value={name}
+                onChange={handleChange}                
+                size="small"
+                fullWidth
+                margin="normal"
+            />
+            <TextField
+                id="outlined-basic"
+                label="Phone number"
+                variant="outlined"
+                type="tel"
+                name="number"
+                pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+                required
+                value={number}
+                onChange={handleChange}                
+                size="small"
+                fullWidth
+                margin="normal"
+                style={{  borderColor: '#1976d2' }}
+            />  
+            <Button
+                variant="contained"
+                type="submit"
+                startIcon={<HiPlus aria-label="plus" size="30" />}
+                style={{ marginTop: 15, fontSize: 18 }}
+            >
+                Add
+            </Button>
+        </Box>
     )
-}
+};
 
 export default ContactForm;

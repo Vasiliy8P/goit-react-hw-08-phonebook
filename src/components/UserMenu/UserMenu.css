@@ -1,8 +1,8 @@
 .UserMenu {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
+    gap: 20px;
+    margin-left: auto;
 }
 
 .User {
@@ -16,8 +16,4 @@
 
 .User__email {
     margin: 0;
-}
-
-.UserMenu__btn-logout {
-    display: block;
 }

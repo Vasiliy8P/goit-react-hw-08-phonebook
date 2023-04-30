@@ -1,0 +1,22 @@
+.Main_container {
+    padding: 16px;
+}
+
+.Contacts {
+    font-size: 18;
+    color: #010101;
+}
+
+.Contacts__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.Contacts__title {
+    font-size: 18;
+    color: #010101;
+    margin: 0;
+}
+

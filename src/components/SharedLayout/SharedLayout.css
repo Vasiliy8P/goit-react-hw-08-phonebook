@@ -1,16 +1,25 @@
 .Container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(231, 235, 240);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.40);
 }
 
 .Header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 12px;
-    padding: 8px 0;
-    margin-bottom: 16px;
-    border-bottom: 1px solid black;
+    padding: 16px;
+    background-color: #1976d2;
+    color: #fff;
 }
+
+.Header__title {
+    margin: 0 40px 0 0;
+    font-size: 26px;
+    font-weight: 800;
+}
+
 
